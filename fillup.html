@@ -1,0 +1,77 @@
+<!doctype html>
+
+<html>
+	<head>
+		<title> Fill Up Form </title>
+		<style> 
+input[type=text] {
+    width: 18%;
+    padding: 8px 10px;
+    box-sizing: border-box;
+}
+</style>
+	</head>
+
+<body>
+		
+	<a href="index.html"> <button style="font-size: 15px; background-color: #ffffff; color: #e65c00; border-radius: 4px;">Cancel</button></a>
+		&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+
+	<BUTTON onclick="save();" style="font-size: 15px; background-color: #ffffff; color: #e65c00; border-radius: 4px;">Save</BUTTON>
+
+<script type="text/javascript">
+	
+function save(){
+	var  SAVE=document.getElementById('name').value;
+	localStorage.setItem("name",SAVE);
+
+	var save1=document.getElementById('organization').value;
+	localStorage.setItem("organization",save1)
+
+	var save2=document.getElementById('phonenumber').value;
+	localStorage.setItem("phonenumber",save2);
+
+	var save3=document.getElementById('email').value;
+	localStorage.setItem("email",save3);
+
+	var save4=document.getElementById('fileToUpload').value;
+	localStorage.setItem("fileToUpload",save4);
+
+	var save5=document.getElementById('sim').value;
+	localStorage.setItem("sim",save5);
+	}
+</script> 
+
+
+<hr>
+		
+	<font size="3"> Device </font>
+		<select id='sim' style="font-size: 15px;">
+			<option value=""></option>
+			<option value="Sim 1"> Sim 1 </option>
+			<option value="Sim 2"> Sim 2 </option>
+		</select>
+<hr>
+
+<form> 
+	<fieldset>
+
+ 		<image src="logo.jpg" height="80" width="80" style="float:left;"/>
+	 
+	 &nbsp; &nbsp; &nbsp;
+
+	<input type="text" id='name' placeholder="Name" style="float:center;">
+<br><br> &nbsp; &nbsp; &nbsp;
+	<input type="text" id='organization' placeholder="Organization" style="float:center;">
+<br>
+	<form action="upload.php" method="post" enctype="multipart/form-data">
+    			<input type="file" name="fileToUpload" id="fileToUpload">
+<br><br>
+	<input type="text" id='phonenumber' placeholder="Phone Number">
+<br><br>
+	<input type="text" id='email' placeholder="Email">
+	</fieldset>
+</form>
+
+</body>
+</html>
